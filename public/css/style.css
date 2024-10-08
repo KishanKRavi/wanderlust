@@ -1,0 +1,158 @@
+
+
+/* // <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 200 to 800 */
+
+body {
+    font-family: "Plus Jakarta Sans", system-ui !important;
+    display: flex;
+    flex-direction:column;
+    min-height: 100vh ;
+}
+
+.container{
+    flex: 1;
+}
+.h3{
+    margin-left: 1rem;
+}
+
+.navbar{
+    height: 4rem;
+    background-color: white;
+}
+.fa-compass{
+    color: #ff0000;
+    font-size: 2rem;
+}
+.nav-link{
+    color: #221c1c !important;
+}
+.navbar-collapse{
+    font-weight: 500 ;
+    color: #221c1c;
+}
+
+.navbar-toggler:active{
+    height: 300px !important;
+}
+
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline black;
+
+}
+
+.f-info{
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center; 
+    align-items: center;
+}
+
+.f-info-socials i{
+    padding: 0.4rem;
+    font-size: 1.3rem;
+}
+.f-info-links, .f-info-socials{
+    width: 100%;
+}
+
+/* cards */
+.card{
+    
+    border: none !important;
+    margin: 10px!important;
+   
+}
+
+.card-img-top{
+    border-radius: 0.8rem !important;
+    width:100% !important;
+    object-fit: cover !important;
+    height: 18rem;
+  
+
+}
+.card-body{
+    padding: 1rem !important;
+    
+}
+.card-text{
+    font-weight: 500;
+    font-size: 0.85rem;
+}
+
+.row{
+    justify-content:space-around;
+}
+
+.listing-link{
+    text-decoration: none;
+    color:#222222;
+}
+
+/* card overlay */
+/* .card-img-overlay{
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+    overflow: hidden;
+}*  */
+
+/*.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+} */
+
+.card-img-top{
+    overflow: hidden;
+}
+
+  .zoom-image {
+    
+    transition: transform 0.2s ease; /* Smooth zoom effect */
+  }
+  
+  .card:hover .zoom-image {
+    transform: scale(1.05); 
+    box-shadow: 5px 5px 7px gray;
+}
+  
+/* 
+.zoom-image:hover{
+  box-shadow:20px 25px gray;
+  } */
+
+/* create new list body */
+.newlist-body form{
+    padding: 2rem !important;
+}
+
+
+.btn-add{
+    background-color: #ff0000 !important;
+    border: none !important;
+}
+
+.show-list{
+    font-family: "Plus Jakarta Sans", system-ui !important;
+}
+
+.show-card{
+    font-weight: 600 !important;
+    font-size: large !important;
+}
+
+.card-of-show{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

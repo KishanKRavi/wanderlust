@@ -1,0 +1,71 @@
+<% layout('/layouts/boilerplate')%>
+
+<body class="newlist-body">
+<div class="row">
+    <div class="col-8">
+    <h2>&nbsp;&nbsp;&nbsp;Create new List</h2>
+
+
+    <form action="/listing" method="post" class="needs-validation" novalidate>
+
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+             
+            <input type="text" class="form-control" required placeholder="Enter title" name="listing[title]"> 
+            <div class="valid-feedback">
+                title is good!
+            </div>
+            <div class="invalid-feedback">
+                Enter valid Title
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea required name="listing[description]" class="form-control"></textarea>
+            <div class="invalid-feedback">
+                Enter valid Description
+            </div>
+        </div>
+            
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input required type="text"class="form-control" placeholder="Enter price" name="listing[price]"> 
+            <div class="invalid-feedback">
+                Enter valid Price
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="image" class="form-label">Image</label>
+            <input  type="text" class="form-control" placeholder="Enter image URL" name="listing[image]"> 
+            
+        </div>
+
+       <div class="row">
+        <div class="mb-3 col-md-4">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" class="form-control" required placeholder="Enter location" name="listing[location]"> 
+            <div class="invalid-feedback">
+                Enter valid Location
+            </div>
+        </div>
+
+        <div class="mb-3 col-md-8">
+            <label for="country" class="form-label">Country</label>
+            <input type="text" class="form-control" required  placeholder="Enter country" name="listing[country]"> 
+            <div class="invalid-feedback">
+                Enter valid Country name
+            </div>
+        </div>
+       </div>
+
+        <br><br>
+        <div>
+            <button class="btn btn-dark btn-add" >ADD</button>
+        </div>
+        <br><br>
+    </form>
+</div>
+</div>
+</body>

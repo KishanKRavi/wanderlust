@@ -1,0 +1,74 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<body>
+    <h3 class="offset-1">Edit the list</h3> <br>
+    
+    <form method="post" action="/listing/<%= listing._id%>?_method=PUT" novalidate class="needs-validation" >
+        
+        <div class="row">
+            <div class="col-10">
+                 
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                     
+                    <input type="text" class="form-control" value="<%= listing.title%>" required placeholder="Enter title" name="listing[title]"> 
+                    <div class="valid-feedback">
+                        title is good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Enter valid Title
+                    </div>
+                </div>
+        
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea required name="listing[description]" class="form-control"><%= listing.description%> </textarea>
+                    <div class="invalid-feedback">
+                        Enter valid Description
+                    </div>
+                </div>
+                    
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input required type="number"class="form-control" value="<%= listing.price%>"  placeholder="Enter price" name="listing[price]"> 
+                    <div class="invalid-feedback">
+                        Enter valid Price
+                    </div>
+                </div>
+        
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image</label>
+                    <input  type="text" class="form-control"  placeholder="Enter image URL" value="<%= listing.image%>"  name="listing[image]"> 
+                    
+                </div>
+        
+               <div class="row">
+                <div class="mb-3 col-md-4">
+                    <label for="location" class="form-label">Location</label>
+                    <input type="text" class="form-control" required placeholder="Enter location" value="<%= listing.location%>"  name="listing[location]"> 
+                    <div class="invalid-feedback">
+                        Enter valid Location
+                    </div>
+                </div>
+        
+                <div class="mb-3 col-md-8">
+                    <label for="country" class="form-label">Country</label>
+                    <input type="text" class="form-control" required  placeholder="Enter country" value="<%= listing.country%>"  name="listing[country]"> 
+                    <div class="invalid-feedback">
+                        Enter valid Country name
+                    </div>
+                </div>
+               </div>
+                
+
+                <br><br>
+                <div>
+                    <button class="btn btn-dark btn-add" >Edit</button>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <br><br>
+    </form>
+    <script src="/js/script.js"></script>
+    
+</body>

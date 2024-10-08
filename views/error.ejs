@@ -1,0 +1,9 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<div class="row">
+  <div class="alert alert-danger alert-dismissible fade show col-8" role="alert">
+    Error status "<%= status %> ",<%= message %>
+   <form action="/listing" method="get">
+     <button class="btn-close" style="border: 0px 0px  black !important;" ></button>
+   </form>
+ </div>
+</div>

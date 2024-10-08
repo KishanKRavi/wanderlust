@@ -1,0 +1,96 @@
+<% layout('/layouts/boilerplate')%>
+<body >
+    <div class="card-of-show">
+      <div class="card show-list" style="width: 40rem;">
+        <h3><%= listing.title %></h3><br>
+        <img src="<%= listing.image %>" class="card-img-top " alt="img of list" style="width: 40rem;"><br>
+        <div class="card-body">
+          <h3 class="card-title"></h3>
+          <h5 class="card-subtitle mb-2 text-body-secondary"><%= listing.description %></h5><br>
+          <p class="card-text show-card"><%=listing.price.toLocaleString("en-IN",{style:'currency',currency:'INR'}) %>
+            <br>
+            <%= listing.location %> <br>
+            <%= listing.country %>
+          </p><br>
+
+          <div class="btns row">
+              <div class="col ">
+                <a href="/listing/<%= listing._id%>/edit" class="btn btn-dark btn-add">Edit</a>
+              </div>
+
+              <div class="col offset-8">
+                <form method="post" action="/listing/<%= listing._id%>?_method=DELETE">
+                  <button class="btn btn-dark ">Delete</button>
+              </div>
+          </form>
+          </div>
+          <br><br>
+          
+       
+        </div>
+        
+      </div>
+      
+    </div>
+    <HR></HR>
+    <br>
+    <div class="row">
+      <div class="col-6 " >
+        <form action="/listing/<%= listing._id %>/review" method="post" class="border border-success p-2 border-opacity-25 rounded-4 needs-validation"  novalidate >
+
+          Leave a review <br>
+
+           <br>
+            <label class="form-label " for="rating">ratings : </label>
+            <input required type="range" id="rating" min="0" max="5" name="review[ratings]" oninput="display()"> &nbsp; &nbsp;
+            <span id="rating_display"  >" 3 " star</span> <br>
+            <div class="form-floating">
+              <textarea required class="form-control" name="review[comment]" placeholder="Leave a comment" id="comment" rows="3" cols="10" ></textarea><br>
+              <label  for="comment">leave a comment</label>
+            </div>
+          <button class="btn btn-outline-dark offset-10" >Submit</button>
+        </form>
+        <br><br>
+      </div>
+    </div>
+    <hr>
+    <h4>All Reviews</h4>
+        
+      <div class="row">
+        <% for(lists of listing.review){ %>
+          <div class="card  border border-opacity-25   rounded-2 mb-5" style="width: 45%;">
+            <div class="card-body">
+              
+              <h5 class="card-subTitle">name of user</h5>
+              <p class="card-text"><%= lists.comment %></p>
+              <p class="card-text"><%= lists.ratings %>  stars</p>
+            </div>
+          </div> 
+        <% } %>
+      </div>
+
+        
+
+    
+    <!-- <style>
+
+/* 
+      .flex-cont{
+        display: flex;
+      } */
+      .cardsReview{
+        width: 45%;
+      }
+     
+    </style> -->
+</body>
+
+<script>
+  function display(){
+    let value = document.getElementById("rating").value;
+    let para = document.getElementById("rating_display");
+    para.innerHTML = `" `+value+` " star`;
+  }
+</script>
+
+
